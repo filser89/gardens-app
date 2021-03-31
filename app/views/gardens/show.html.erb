@@ -1,0 +1,10 @@
+<h2><%= @garden.name %></h2>
+<p><%= @garden.city %></p>
+<p><%= @garden.bio%></p>
+<%= image_tag @garden.image_url, alt: "garden photo" %>
+<%= link_to "Add plant", new_garden_plant_path(@garden)  %>
+<% @garden.plants.each do |plant| %>
+  <p> <%= plant.name %></p>
+  <p> <%= plant.size %></p>
+  <%= image_tag plant.image_url, alt: "plant pic" %>
+<% end %>
